@@ -1,0 +1,38 @@
+{
+  "description": "Simple Volume plugin for Docker",
+  "documentation": "https://github.com/axoom/docker-volume-simple",
+  "entrypoint": [
+    "/docker-volume-simple"
+  ],
+  "env": [
+    {
+      "name": "ROOT",
+      "settable": [
+        "value"
+      ],
+      "value": "/mnt/volumes"
+    },
+    {
+      "name": "SCOPE",
+      "settable": [
+        "value"
+      ],
+      "value": "local"
+    }
+  ],
+  "mounts": [
+    {
+        "destination": "/host",
+        "type": "bind",
+        "source": "/",
+        "options": ["rbind","rw"]
+    }
+  ],
+  "interface": {
+    "socket": "plugin.sock",
+    "types": [
+      "docker.volumedriver/1.0"
+    ]
+  },
+  "propagatedMount": "/host"
+}
