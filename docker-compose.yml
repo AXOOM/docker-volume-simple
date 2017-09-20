@@ -1,8 +1,0 @@
-version: '2.1'
-
-services:
-  plugin-build:
-    build: .
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    entrypoint: docker plugin create ${DOCKER_REGISTRY-docker-ci.axoom.cloud}/docker-volume-simple:${VERSION-0.1-dev} /plugin
