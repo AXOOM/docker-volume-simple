@@ -9,7 +9,7 @@ import (
 
 func main() {
 	volume.NewHandler(&simpleDriver{
-		root: filepath.Join("/host", os.Getenv("ROOT")),
+		root: os.Getenv("ROOT"),
 		scope: os.Getenv("SCOPE"),
 	}).ServeUnix("/run/docker/plugins/plugin.sock", 0)
 }

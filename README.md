@@ -15,7 +15,7 @@ These scripts take a version number as an input argument. The source code itself
 $ docker plugin install --alias global docker.axoom.cloud/docker-volume-simple ROOT=/mnt/volumes/ SCOPE=global
 ```
 
-`/mnt/volumes/` is the directory in the host filesystem to store volumes in.  
+`/mnt/volumes/` is the directory in the host filesystem to store volumes in. Only subdirectories of `/mnt` are allowed.  
 `SCOPE=global` tells Docker that the underlying storage is shared between all nodes in the cluster .
 
 ### 2. Create a volume

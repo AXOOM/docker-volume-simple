@@ -22,9 +22,9 @@
   ],
   "mounts": [
     {
-        "destination": "/host",
+        "destination": "/mnt",
         "type": "bind",
-        "source": "/",
+        "source": "/mnt",
         "options": ["rbind","rw"]
     }
   ],
@@ -34,5 +34,5 @@
       "docker.volumedriver/1.0"
     ]
   },
-  "propagatedMount": "/host"
+  "propagatedMount": "/mnt"
 }

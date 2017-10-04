@@ -5,7 +5,7 @@ COPY . .
 RUN go install --ldflags '-extldflags "-static"'
 
 FROM alpine as rootfs
-RUN mkdir -p /run/docker/plugins /host
+RUN mkdir -p /run/docker/plugins /mnt
 COPY --from=builder /go/bin/docker-volume-simple .
 
 FROM docker
