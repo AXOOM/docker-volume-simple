@@ -44,12 +44,19 @@ func (d *simpleDriver) Unmount(r *volume.UnmountRequest) error {
 }
 
 func (d *simpleDriver) Get(r *volume.GetRequest) (*volume.GetResponse, error) {
-	return &volume.GetResponse{
-		Volume: &volume.Volume{
-			Name: r.Name,
-			Mountpoint: filepath.Join(d.root, r.Name),
-		},
-	}, nil
+	path := filepath.Join(d.root, r.Name)
+	stat, error := os.Stat(path);
+
+	if error == nil && stat.IsDir() {
+		return &volume.GetResponse{
+			Volume: &volume.Volume{
+				Name: r.Name,
+				Mountpoint: path,
+			},
+		}, nil
+	} else {
+		return nil, error
+	}
 }
 
 func (d *simpleDriver) List() (*volume.ListResponse, error) {
