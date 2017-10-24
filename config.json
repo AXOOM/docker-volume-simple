@@ -1,6 +1,6 @@
 {
-  "description": "Simple Volume plugin for Docker",
-  "documentation": "https://tfs.inside-axoom.org/tfs/axoom/axoom/_git/docker-volume-simple?path=%2FREADME.md&_a=preview",
+  "description": "Simple Volume Plugin for Docker",
+  "documentation": "https://tfs.inside-axoom.org/tfs/axoom/axoom/_git/docker-volume-simple?_a=readme&fullScreen=true",
   "entrypoint": [
     "/docker-volume-simple"
   ],

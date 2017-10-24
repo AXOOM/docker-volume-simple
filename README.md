@@ -1,4 +1,4 @@
-# Docker simple volume plugin
+# Simple Volume Plugin for Docker
 
 This Docker plugin allows you to use an arbitrary directory for storing volumes. This is commonly used to use an NFS mount shared between all nodes in a Docker Swarm cluster as the backing storage for volumes.
 
@@ -21,7 +21,7 @@ $ docker plugin install --alias data docker.axoom.cloud/docker-volume-simple:1.0
 ### 2. Create a volume
 
 ```
-$ docker volume create -d data sharedvolume
+$ docker volume create -d data myvolume
 sharedvolume
 $ docker volume ls
 DRIVER              VOLUME NAME
@@ -30,7 +30,7 @@ local               842a765a9bb11e234642c933b3dfc702dee32b73e0cf7305239436a145b8
 local               9d72c664cbd20512d4e3d5bb9b39ed11e4a632c386447461d48ed84731e44034
 local               be9632386a2d396d438c9707e261f86fd9f5e72a7319417901d84041c8f14a4d
 local               e1496dfe4fa27b39121e4383d1b16a0a7510f0de89f05b336aab3c0deb4dda0e
-data                sharedvolume
+data                myvolume
 ```
 
 ### 3. Use the volume
