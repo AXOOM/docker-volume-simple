@@ -67,7 +67,7 @@ func (d *simpleDriver) List() (*volume.ListResponse, error) {
 
 	var vols []*volume.Volume
 	for _, e := range list {
-		if (e.IsDir()) {
+		if (e.IsDir() && e.Name() != "lost+found") {
 			vols = append(vols, &volume.Volume{
 				Name: e.Name(),
 				Mountpoint: filepath.Join(d.root, e.Name()),
