@@ -12,7 +12,7 @@ These scripts take a version number as an input argument. The source code itself
 ### 1. Install the plugin
 
 ```
-$ docker plugin install --alias data docker.axoom.cloud/docker-volume-simple:1.0.0 ROOT=/mnt/data/ SCOPE=global
+$ docker plugin install --grant-all-permissions --alias data docker.axoom.cloud/docker-volume-simple:1.0.0 ROOT=/mnt/data/ SCOPE=global
 ```
 
 `/mnt/volumes/` is the directory in the host filesystem to store volumes in. Only subdirectories of `/mnt` are allowed.  
