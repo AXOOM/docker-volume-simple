@@ -33,5 +33,6 @@
     "types": [
       "docker.volumedriver/1.0"
     ]
-  }
+  },
+  "propagatedMount": "/mnt"
 }
